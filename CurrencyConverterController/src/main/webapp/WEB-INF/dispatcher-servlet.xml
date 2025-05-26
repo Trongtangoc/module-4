@@ -12,7 +12,7 @@
        http://www.springframework.org/schema/tool
        http://www.springframework.org/schema/tool/spring-tool.xsd">
     <mvc:annotation-driven/>
-    <context:component-scan base-package="com.codegym.currencyconvertercontroller"/>
+    <context:component-scan base-package="com.codegym.currencyconvertercontroller.controller"/>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".jsp" />
