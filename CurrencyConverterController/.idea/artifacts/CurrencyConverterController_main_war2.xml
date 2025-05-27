@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="CurrencyConverterController.main:war2">
+    <output-path>$PROJECT_DIR$/out/artifacts/CurrencyConverterController_main_war2</output-path>
+    <root id="archive" name="CurrencyConverterController.main_war.war">
+      <element id="artifact" artifact-name="CurrencyConverterController.main:war exploded" />
+    </root>
+  </artifact>
+</component>
