@@ -23,17 +23,9 @@ tasks.withType(JavaCompile) {
 
 dependencies {
     // Spring MVC
-    implementation 'org.springframework:spring-webmvc:5.3.27'
+    implementation 'org.springframework:spring-webmvc:5.3.23'
 
-    // Servlet API (provided by Tomcat)
-    providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
 
-    // JSTL cho JSP
-    implementation 'javax.servlet:jstl:1.2'
-
-    // Logging (tùy chọn)
-    implementation 'org.slf4j:slf4j-api:1.7.36'
-    implementation 'org.slf4j:slf4j-simple:1.7.36'
 }
 
 war {
