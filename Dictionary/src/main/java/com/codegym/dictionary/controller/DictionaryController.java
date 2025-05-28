@@ -2,13 +2,19 @@ package com.codegym.dictionary.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @Controller
+@RequestMapping("/home")
 public class DictionaryController {
+    @RequestMapping("/show")
+    public String showHome() {
+        return "home";
+    }
 
     // Dữ liệu từ điển Anh - Việt
     private static final Map<String, String> dictionary = new HashMap<>();
@@ -22,20 +28,15 @@ public class DictionaryController {
         // ... thêm từ nếu muốn
     }
 
-    @GetMapping("/")
-    public String home() {
-        return "index"; // trả về trang index.jsp
-    }
-
-    @PostMapping("/search")
-    public String search(@RequestParam("word") String word, Model model) {
-        String meaning = dictionary.get(word.toLowerCase());
+    @RequestMapping("/search")
+    public String search(@RequestParam("search") String search, Model model) {
+        String meaning = dictionary.get(search.toLowerCase());
         if (meaning != null) {
-            model.addAttribute("word", word);
+            model.addAttribute("search", search);
             model.addAttribute("meaning", meaning);
         } else {
-            model.addAttribute("notFound", "Không tìm thấy từ '" + word + "' trong từ điển.");
+            model.addAttribute("notFound", "Không tìm thấy từ '" + search + "' trong từ điển.");
         }
-        return "index";
+        return "result";
     }
 }

@@ -22,10 +22,8 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
-    // Spring MVC
-    implementation 'org.springframework:spring-webmvc:5.3.23'
-
-
+    // https://mvnrepository.com/artifact/org.springframework/spring-webmvc
+    implementation("org.springframework:spring-webmvc:5.3.23")
 }
 
 test {
