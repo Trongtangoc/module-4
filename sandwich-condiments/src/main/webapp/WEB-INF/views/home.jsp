@@ -21,7 +21,7 @@
   <label for="condi3">Mustard</label>
   <input type="checkbox" id="condi4" name="condi1" value="Sprouts">
   <label for="condi4">Sprouts</label>
-
+<input type="submit" value="Submit">
 </form>
 </body>
 </html>
