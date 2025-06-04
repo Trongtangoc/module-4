@@ -33,7 +33,7 @@ public class CustomerController {
     public String save(Customer customer) {
         customer.setCustomerId((int) (Math.random() * 10000));
         customerService.saveCustomer(customer);
-        return "redirect:/customer";
+        return "redirect:/customers";
     }
     @GetMapping("/{customerId}/edit")
     public String update(@PathVariable int customerId, Model model) {
