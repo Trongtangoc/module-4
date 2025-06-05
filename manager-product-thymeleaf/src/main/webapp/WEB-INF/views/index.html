@@ -19,17 +19,6 @@
 
 <table id = "products">
     <thead>
-    private int productId;
-    private String productName;
-    private String productDescription;
-    private int productPrice;
-    private String productCategory;
-    private String productImage;
-    private String productStatus;
-    private String productBrand;
-    private int productQuantity;
-    private String productUnit;
-
     <tr>
         <th>Product Name</th>
         <th>Description</th>
@@ -42,7 +31,7 @@
         <th>Unit</th>
         <th>edit</th>
         <th>delete</th>
-        <th>viewl</th>
+        <th>view</th>
     </tr>
     </thead>
     <tbody>
@@ -56,9 +45,9 @@
         <td th:text="${row.getProductBrand()}"></td>
         <td th:text="${row.getProductQuantity()}"></td>
         <td th:text="${row.getProductUnit()}"></td>
-        <td><a th:href="@{/customers/{customerId}/edit(customerId=${row.getCustomerId()})}">edit</a></td>
-        <td><a th:href="@{/customers/{customerId}/delete(customerId=${row.getCustomerId()})}">delete</a></td>
-        <td><a th:href="@{/customers/{customerId}/view(customerId=${row.getCustomerId()})}">view</a></td>
+        <td><a th:href="@{/products/{productId}/edit(customerId=${row.getProductId()})}">edit</a></td>
+        <td><a th:href="@{/products/{productId}/delete(customerId=${row.getProductId()()})}">delete</a></td>
+        <td><a th:href="@{/products`/{productId}/view(customerId=${row.getProductId()})}">view</a></td>
     </tr>
     </tbody>
 </table>
