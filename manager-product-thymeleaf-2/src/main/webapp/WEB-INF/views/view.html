@@ -1,10 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="/layout :: head">
+    <title>View Products</title>
 </head>
 <body>
+<h1>View Product</h1>
+<p>
+    <a th:href="@{/products}">Back to Products List</a>
+</p>
+<div id="detail">
 
+        <div>
+            <label for="productName">Product Name: </label>
+            <label type="text" id="productName" th:text="${product.productName}"></label>
+        </div>
+        <div>
+            <label for="productDescription">Product Description: </label>
+            <label id="productDescription"
+                   th:text="${product.productDescription}"
+                   type="text" ></label>
+        </div>
+        <div>
+            <label for="productPrice">Product Price: </label>
+            <label id="productPrice"
+                   th:text="${product.productPrice}"
+                   type="text"></label>
+        </div>
+        <div>
+            <label for="productBrand">Product Brand: </label>
+            <label id="productBrand"
+                   th:text="${product.productBrand}"
+                   type="text"></label>
+        </div>
+        <div>
+            <label for="productImage">Product Image: </label>
+            <label id="productImage"
+                   th:text="${product.productImage}"
+                   type="text"></label>
+        </div>
+        <div>
+            <label for="productDescription">Product Stock: </label>
+            <label id="productStock"
+                   th:text="${product.productStock}"
+                   type="text"></label>
+        </div>
+        <div>
+            <label for="productType">Product Type: </label>
+            <label id="productType"
+                   th:text="${product.productType}"
+                   type="text"></label>
+        </div>
+
+
+</div>
+<footer th:replace="/layout :: footer"></footer>
 </body>
 </html>

@@ -2,11 +2,10 @@ package com.codegym.managerproductthymeleaf2.service;
 
 import com.codegym.managerproductthymeleaf2.model.Product;
 
-
-import java.util.List;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ProductService implements IProductService {
     private static final Map<Integer, Product> products;
@@ -33,16 +32,16 @@ public class ProductService implements IProductService {
 
     @Override
     public void deleteProduct(int productId) {
-
+        products.remove(productId);
     }
 
     @Override
     public void updateProduct(int productId, Product product) {
-
+        products.put(productId, product);
     }
 
     @Override
     public Product getProductById(int productId) {
-        return null;
+        return products.get(productId);
     }
 }

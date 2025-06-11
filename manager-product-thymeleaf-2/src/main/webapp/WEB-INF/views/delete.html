@@ -1,10 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="/layout :: head">
+    <title>Delete Products</title>
 </head>
 <body>
-
+<h1>Delete Product</h1>
+<p>
+    <a th:href="@{/products}">Back to Products List</a>
+</p>
+<div id="form">
+    <form action="products/save" th:action="@{/products/delete}" th:object="${product}"
+        method="post" novalidate="novalidate">
+        <input type="hidden" th:field="*{productId}"/>
+        <div>
+            <label for="productName">Product Name</label>
+            <input type="text" id="productName" th:field="*{productName}"/>
+        </div>
+        <div>
+            <label for="productDescription">Product Description</label>
+            <input id="productDescription"
+                   th:field="*{productDescription}"
+                   type="text"/>
+        </div>
+        <div>
+            <label for="productPrice">Product Price</label>
+            <input id="productPrice"
+                   th:field="*{productPrice}"
+                   type="text"/>
+        </div>
+        <div>
+            <label for="productBrand">Product Brand</label>
+            <input id="productBrand"
+                   th:field="*{productBrand}"
+                   type="text"/>
+        </div>
+        <div>
+            <label for="productImage">Product Image</label>
+            <input id="productImage"
+                   th:field="*{productImage}"
+                   type="text"/>
+        </div>
+        <div>
+            <label for="productDescription">Product Stock</label>
+            <input id="productStock"
+                   th:field="*{productStock}"
+                   type="text"/>
+        </div>
+        <div>
+            <label for="productType">Product Type</label>
+            <input id="productType"
+                   th:field="*{productType}"
+                   type="text"/>
+        </div>
+        <input type="submit" value="Remove"/>
+    </form>
+</div>
+<footer th:replace="/layout :: footer"></footer>
 </body>
 </html>

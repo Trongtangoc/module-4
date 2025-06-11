@@ -6,7 +6,7 @@
 <body>
 <h3>Products</h3>
 <p>
-    <a th:href="@{/customers/create}">
+    <a th:href="@{/products/create}">
         Add new product
     </a>
 </p>
@@ -34,16 +34,16 @@
     </thead>
     <tbody>
     <tr th:each="row,rowStat : ${products}">
-        <td th:text="${row.getProductName()()}"></td>
+        <td th:text="${row.getProductName()}"></td>
         <td th:text="${row.getProductDescription()}"></td>
-        <td th:text="${row.getProductPrice()()}"></td>
-        <td th:text="${row.getProductBrand()()}"></td>
-        <td th:text="${row.getProductImage()()}"></td>
-        <td th:text="${row.getProductStock()()}"></td>
-        <td th:text="${row.getProductType()()}"></td>
-        <td><a th:href="@{/products/{productId}/edit(productId=${row.getProductId()()})}">edit</a></td>
-        <td><a th:href="@{/products/{productId}/delete(productId=${row.getProductId()()})}">delete</a></td>
-        <td><a th:href="@{/products/{productId}/view(productId=${row.getProductId()()})}">view</a></td>
+        <td th:text="${row.getProductPrice()}"></td>
+        <td th:text="${row.getProductBrand()}"></td>
+        <td th:text="${row.getProductImage()}"></td>
+        <td th:text="${row.getProductStock()}"></td>
+        <td th:text="${row.getProductType()}"></td>
+        <td><a th:href="@{/products/{productId}/edit(productId=${row.getProductId()})}">edit</a></td>
+        <td><a th:href="@{/products/{productId}/delete(productId=${row.getProductId()})}">delete</a></td>
+        <td><a th:href="@{/products/{productId}/view(productId=${row.getProductId()})}">view</a></td>
     </tr>
     </tbody>
 </table>
