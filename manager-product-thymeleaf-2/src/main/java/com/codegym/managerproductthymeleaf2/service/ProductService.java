@@ -44,4 +44,16 @@ public class ProductService implements IProductService {
     public Product getProductById(int productId) {
         return products.get(productId);
     }
+
+    @Override
+    public List<Product> getProductsByName(String productName) {
+        List<Product> productResults = new ArrayList<>();
+        for (Map.Entry<Integer, Product> entry : products.entrySet()) {
+            Product product = entry.getValue();
+            if (product.getProductName().toLowerCase().contains(productName.toLowerCase())) {
+                productResults.add(product);
+            }
+        }
+        return productResults;
+    }
 }
